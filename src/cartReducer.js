@@ -2,17 +2,18 @@
 export const cartReducer = (cartList, action) => {
   switch (action.type) {
     case "ADD_ONE_TO_CART":
-      if (cartList.length === 0) { // FIXME: Not needed
-        // create a new cart array if empty
-        return [
-          {
-            name: action.payload.name,
-            id: action.payload.id,
-            price: action.payload.price,
-            count: 1
-          }
-        ];
-      }
+      // if (cartList.length === 0) { // FIXME: Not needed
+      //   // create a new cart array if empty
+      //   return [
+      //     {
+      //       name: action.payload.name,
+      //       id: action.payload.id,
+      //       price: action.payload.price,
+      //       count: 1
+      //     }
+      //   ];
+      // }
+
       // if product is arleady in cart
       const list = cartList.map(cartItem => {
         if (action.payload.id === cartItem.id) {
