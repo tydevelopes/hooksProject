@@ -47,7 +47,7 @@ const Pagination = ({ items, itemsPerPage }) => {
     console.log("pages", pageRef.current);
 
     renderPage(currentPage, pageRef.current[currentPage - 1]);
-  }, [items]);
+  }, [items, currentPage]);
 
   const len = Math.ceil(items.length / itemsPerPage);
   const pages = Array.from({ length: len }, (_, i) => i).map((item, index) => {
