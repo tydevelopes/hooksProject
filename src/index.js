@@ -1,17 +1,17 @@
 import React, { useReducer, createContext } from "react";
 import ReactDOM from "react-dom";
-import Left from "./left";
-import Right from "./right";
-import Top from "./top";
-import Middle from "./middle";
-import "./productsObject";
-import Notification from "./Notification";
-import { initialProducts } from "./data.js";
-import { productReducer } from "./productReducer";
-import { cartReducer } from "./cartReducer";
+import Left from "./components/left";
+import Right from "./components/right";
+import Top from "./components/top";
+import Middle from "./components/middle";
+import "./dataSource/productsObject";
+import Notification from "./components/Notification";
+import { initialProducts } from "./dataSource/data.js";
+import { productReducer } from "./reducers/productReducer";
+import { cartReducer } from "./reducers/cartReducer";
 import "./styles.css";
-import { filterReducer } from "./filterReducer";
-import { messageReducer } from "./messageReducer";
+import { filterReducer } from "./reducers/filterReducer";
+import { messageReducer } from "./reducers/messageReducer";
 
 // Create a context to help pass data to inner components
 export const ProductsContext = createContext();
