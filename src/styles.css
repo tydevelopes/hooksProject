@@ -1,9 +1,9 @@
 .App {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  color: #b4b4ca;
+  color: rgb(219, 216, 216);
   font-size: 12px;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  background: rgb(31, 31, 31);
   min-height: 100vh;
 }
 .top {
@@ -21,11 +21,10 @@
 .top > div > span:nth-child(2) {
   position: absolute;
   top: -10px;
-  color: white;
   padding: 1px 5px;
   font-size: 0.5rem;
   border-radius: 1rem;
-  background-color: rgb(129, 83, 236);
+  background-color: rgb(218, 90, 81);
 }
 .main {
   display: flex;
@@ -73,10 +72,10 @@
   justify-content: center;
 }
 .paginated_lists li:nth-child(even) {
-  background: linear-gradient(to right, #221f42, #302b63, #2b2b49);
+  /* background: linear-gradient(to right, #221f42, #302b63, #2b2b49); */
 }
 .paginated_lists li:nth-child(odd) {
-  background: linear-gradient(to right, #120f2c, #302b63, #24243e);
+  /* background: linear-gradient(to right, #120f2c, #302b63, #24243e); */
 }
 .paginated_lists li > * {
   flex: 1;
@@ -100,10 +99,12 @@
 }
 button {
   border-radius: 5px;
+  border: none;
   color: inherit;
   height: 30px;
   max-width: 90px;
-  background: linear-gradient(to right, #005c97, #363795);
+  background-color: rgb(218, 90, 81);
+  margin: 10px;
 }
 .message {
   display: flex;
@@ -132,7 +133,12 @@ button {
 .paginated_pages span {
   padding: 4px 8px;
   border: 1px solid rgb(104, 102, 102);
+  border-radius: 2px;
+  margin: 2px;
+}
+.paginated_pages span:hover {
+  background-color: rgb(104, 102, 102);
 }
 .active {
-  background-color: rgb(167, 38, 49);
+  background-color: rgb(218, 90, 81);
 }

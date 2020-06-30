@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from "react";
+import React, { useReducer, createContext, useState } from "react";
 import ReactDOM from "react-dom";
 import Left from "./components/left";
 import Right from "./components/right";
@@ -12,6 +12,8 @@ import { cartReducer } from "./reducers/cartReducer";
 import "./styles.css";
 import { filterReducer } from "./reducers/filterReducer";
 import { messageReducer } from "./reducers/messageReducer";
+
+import Modal from "./components/modal/Modal";
 
 // Create a context to help pass data to inner components
 export const ProductsContext = createContext();
@@ -34,6 +36,17 @@ function App() {
     message: ""
   });
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleHideModal = e => {
+    // e.stopPropagation();
+    setShowModal(false);
+  };
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
   console.log("<App/> rendered");
   return (
     <ProductsContext.Provider
@@ -50,9 +63,20 @@ function App() {
         {messageState.show && <Notification message={messageState.message} />}
         <div className="main">
           <Left />
-          <CartListContext.Provider value={{ cartList, cartListDispatch }}>
+          <CartListContext.Provider
+            value={{
+              cartList,
+              cartListDispatch,
+              handleShowModal,
+              handleHideModal
+            }}
+          >
             <Middle />
-            <Right />
+            {showModal && (
+              <Modal handleHideModal={handleHideModal}>
+                <Right />
+              </Modal>
+            )}
           </CartListContext.Provider>
         </div>
       </div>
