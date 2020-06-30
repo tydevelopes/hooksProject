@@ -117,3 +117,22 @@ button {
   background: linear-gradient(to right, #16222a, #3a6073);
   border-radius: 5px;
 }
+
+.paginated {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: space-between;
+}
+
+.paginated_pages {
+  /* background-color: rgb(185, 105, 105); */
+  padding: 10px;
+}
+.paginated_pages span {
+  padding: 4px 8px;
+  border: 1px solid rgb(104, 102, 102);
+}
+.active {
+  background-color: rgb(167, 38, 49);
+}
